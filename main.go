@@ -2,13 +2,11 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/gin-gonic/gin"
-	"go_server/io"
-	"go_server/sms"
-	"go_server/utils"
 	"net/http"
-	"reflect"
+	"sms/io"
+	"sms/sdk"
+	"sms/utils"
 )
 
 type Rep struct {
@@ -21,7 +19,7 @@ func sendCode(c *gin.Context) {
 	body := Rep{}
 	_ = json.Unmarshal(b, &body)
 	code := utils.ParseCode(body.Code)
-	sms.SendSms(body.Phone, code)
+	sdk.SendSms(body.Phone, code)
 	c.JSONP(http.StatusOK, true)
 }
 
@@ -34,7 +32,6 @@ func main() {
 	conf, _ := io.ReadFile()
 	port := utils.ParseProt(conf["port"].(string))
 
-	fmt.Println(reflect.TypeOf(conf["port"]))
 	r := gin.Default()
 	r.GET("/test", test)
 	r.POST("/sendCode", sendCode)

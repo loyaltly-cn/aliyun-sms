@@ -1,4 +1,4 @@
-package sms
+package sdk
 
 import (
 	"encoding/json"
@@ -7,8 +7,9 @@ import (
 	dysmsapi20170525 "github.com/alibabacloud-go/dysmsapi-20170525/v3/client"
 	util "github.com/alibabacloud-go/tea-utils/v2/service"
 	"github.com/alibabacloud-go/tea/tea"
-	"go_server/io"
 	"os"
+	"sms/io"
+
 	"strings"
 )
 
