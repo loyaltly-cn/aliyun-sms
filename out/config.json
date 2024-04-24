@@ -1,0 +1,8 @@
+{
+  "AccessKeyId": "your AccessKeyId",
+  "AccessKeySecret": "your AccessKeySecret",
+  "Endpoint": "dysmsapi.aliyuncs.com",
+  "SignName": "your SignName",
+  "TemplateCode": "your TemplateCode",
+  "port":"2000"
+}
