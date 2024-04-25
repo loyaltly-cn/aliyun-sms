@@ -18,6 +18,6 @@ func ParseCode(code string) string {
 
 }
 
-func ParseProt(port string) string {
+func ParsePort(port string) string {
 	return ":" + port
 }

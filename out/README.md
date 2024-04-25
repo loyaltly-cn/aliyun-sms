@@ -20,9 +20,9 @@
 
 > 成功启动通过 ip:port/uri 访问 API
 
-| uri      | method | param | response |
-| -------- | ------ | ----- | -------- |
-| test     | GET    | /     | "test"   |
-| sendCode | POST   | code:strring <br/> phone:string | true |
+| uri  | method | param | response | desc |
+|------| ------ | ----- | -------- |------|
+| test | GET    | /     | "test"   | 测试 |
+| sms  | POST   | code:strring <br/> phone:string | true | 发送验证码|
 
 > Content-Type: application/json

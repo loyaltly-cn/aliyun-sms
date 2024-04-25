@@ -2,11 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"sms/io"
 	"sms/sdk"
 	"sms/utils"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Rep struct {
@@ -30,11 +31,11 @@ func test(c *gin.Context) {
 func main() {
 
 	conf, _ := io.ReadFile()
-	port := utils.ParseProt(conf["port"].(string))
+	port := utils.ParsePort(conf["port"].(string))
 
 	r := gin.Default()
 	r.GET("/test", test)
-	r.POST("/sendCode", sendCode)
+	r.POST("/sms", sendCode)
 
 	err := r.Run(port)
 	if err != nil {
